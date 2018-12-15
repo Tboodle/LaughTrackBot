@@ -1,0 +1,7 @@
+tmux:
+
+start: tmux new -s mywindow
+rejoin: tmux a -t mywindow
+delete: tmux kill-ses -t mywindow
+
+quit: ctrl+b d
