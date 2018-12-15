@@ -4,10 +4,13 @@ from discord.ext import commands
 import discord
 import asyncio
 import time
+import json
 
-CLIENT_ID =  	305046221977026570
-CLIENT_SECRET = "hc3FoSAT3Mp8_zryHNd9BF2YEmSSJfoT"
-TOKEN = 	"MzA1MDQ2MjIxOTc3MDI2NTcw.C9vs3g.F_lj7AsU8h0-9wrp22iXzs9VCgc"
+#Import Discord API Data
+discord_info = json.load(open("discord_info.json"))
+CLIENT_ID =     discord_info["CLIENT_ID"]
+CLIENT_SECRET = discord_info["CLIENT_SECRET"]
+TOKEN =         discord_info["TOKEN"]
 
 class Audio:
 
