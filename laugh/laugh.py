@@ -23,11 +23,11 @@ class Audio:
     @commands.command(pass_context=True, no_pm=True)
     async def haha(self, ctx):
 
-        #try:
-        voice = await self.bot.join_voice_channel(ctx.message.author.voice.voice_channel)
-        playerHaha = voice.create_ffmpeg_player("clips/" + "haha.wav")
-        #except:
-        #    print("Could not join voice channel")
+        try:
+            voice = await self.bot.join_voice_channel(ctx.message.author.voice.voice_channel)
+            playerHaha = voice.create_ffmpeg_player("clips/" + "haha.wav")
+        except:
+            print("Could not join voice channel")
     
         await self.bot.delete_message(ctx.message)
         playerHaha.start()
@@ -65,22 +65,6 @@ class Audio:
         time.sleep(4)
         player.stop()
         await voice.disconnect()
-
-
-#    @commands.command(pass_context=True, no_pm=True)
-#    async def yes(self, ctx):
-
-#        try:
-#            voice = await self.bot.join_voice_channel(ctx.message.author.voice_channel)
-#        except:
-#            print("Could not join voice channel")
-    
-#        await self.bot.delete_message(ctx.message)
-#        player = voice.create_ffmpeg_player("clips/" + "yes.wav")
-#        player.start()
-#        time.sleep(4)
-#        player.stop()
-#        await voice.disconnect()
 
 def main():
     bot = commands.Bot(command_prefix=commands.when_mentioned_or('!'), description='Haha bot')

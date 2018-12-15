@@ -1,1 +1,5 @@
-This is the repo for the laughtrack bot
+LaughTrack Bot
+
+You must install discord.py (with voice support), ffmpeg, and libopus
+
+You also must have an account set up with the Discord API for the Client id, Client secret, and the token.
